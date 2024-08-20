@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import {Contact} from "./views/contact"
+import { Formulario } from "./views/form";
 // import {  } from "./views/";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
@@ -22,12 +23,14 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
+					{/* <Navbar /> */}
 					<Routes>
-						<Route path="/" element={<Home />} />
+						{/* por cada / redirige al elemento contact */}
+						<Route path="/" element={<Contact/>} />
 						{/* <Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} /> */}
-						<Route path="/contact" element={<Contact/>} />
+						{/* <Route path="/contact" element={<Contact/>} /> */}
+						<Route path="/form" element={<Formulario/>} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					{/* <Footer /> */}
