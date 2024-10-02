@@ -1,17 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
-import { Home } from "./views/home";
-import {Contact} from "./views/contact"
-import { Formulario } from "./views/form";
-// import {  } from "./views/";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+// import HandlerClick from "./component/prueba";
+import  Contact  from "./views/Contact.jsx"
+import AddContact from "./views/AddContact.jsx";
 import injectContext from "./store/appContext";
-
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+import EditContact from "./views/EditContact.jsx";
 
 //create your first component
 const Layout = () => {
@@ -25,12 +19,16 @@ const Layout = () => {
 				<ScrollToTop>
 					{/* <Navbar /> */}
 					<Routes>
+						{/* formulario para agregar contactos  */}
+						<Route path="/AddContact" element={ <AddContact />} />
 						{/* por cada / redirige al elemento contact */}
-						<Route path="/" element={<Contact/>} />
+						<Route path="/" element={<Contact />} />
 						{/* <Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} /> */}
 						{/* <Route path="/contact" element={<Contact/>} /> */}
-						<Route path="/form" element={<Formulario/>} />
+						{/* editar contacto  */}
+						<Route path="/edit/:id" element={<EditContact />} />
+						{/* rutas no encontradas */}
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					{/* <Footer /> */}
